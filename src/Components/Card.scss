@@ -1,0 +1,48 @@
+.card-block {
+    border:1px solid #efefef;
+    padding:10px;
+    width:240px;
+    height: 320px;
+    border-radius: 20px;
+    transition: box-shadow 0.2 ease-in-out;
+    transition: transform 0.2 ease-in-out; 
+    position: relative;
+    padding:20px;
+    margin:20px;
+    display:flex;
+    flex-direction: column;
+
+ 
+}
+.card-block:hover {
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px);
+}
+.card-block__favorite img {
+position: absolute;
+top:20px;
+cursor: pointer;
+
+}
+  
+.card-block__price {
+
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.card-block__total {
+    display: flex;
+    flex-direction: column;
+    span {
+        opacity: 0.7;
+    }
+}
+.card-block__img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 20px -20px;
+    width:200px;
+    height: 180px;
+    flex:1;
+}
