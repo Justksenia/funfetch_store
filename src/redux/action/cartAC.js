@@ -1,4 +1,5 @@
-import * as axios from "axios";
+
+import { serverAPI } from "../../api/api";
 
 export const setCartOpened=(value)=>({
     type:"SET_CART_DISPLAY",
@@ -20,22 +21,24 @@ export const deleteItemsToCart=(id)=>({
     payload:id
 })
 
+export const clearCart=(obj)=>({
+    type:"CLEAR_TO_CART",
+    payload:obj
+})
+
 export const cartFetched=()=>(dispatch)=>{
-    // dispatch (setLoading(true));
-    axios.get("https://62cef37d486b6ce8265035e8.mockapi.io/cart")
+    serverAPI.getData("cart")
     .then(response=> dispatch(setCartItems(response.data))
     )
 }  
 
 export const cartSending=(obj)=>(dispatch)=>{
-    // dispatch (setLoading(true));
-    axios.post("https://62cef37d486b6ce8265035e8.mockapi.io/cart", obj)
+     serverAPI.postData("cart",obj)
     .then(response=> dispatch(addItemsToCart(response.data))
     )
 }
 export const cartRemoving=(id)=>(dispatch)=>{
-    // dispatch (setLoading(true));
-    axios.delete(`https://62cef37d486b6ce8265035e8.mockapi.io/cart/${id}`)
-    .then(response=> dispatch(deleteItemsToCart(id))
+    serverAPI.deleteData("cart",id)
+    .then(dispatch(deleteItemsToCart(id))
     )
 }

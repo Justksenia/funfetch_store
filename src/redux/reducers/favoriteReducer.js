@@ -1,5 +1,6 @@
 const initialState={
-    favoriteItems:[]
+    favoriteItems:[],
+    loading:true
 }
 
  const favoriteReducer=(state=initialState, action)=> {
@@ -7,7 +8,8 @@ const initialState={
         case "SET_FAVORITE": 
             return {
                 ...state,
-                favoriteItems:action.payload
+                favoriteItems:action.payload,
+                loading:false
             }
         case "ADD_TO_FAVORITE": {
             const newItems=[...state.favoriteItems, action.payload]
