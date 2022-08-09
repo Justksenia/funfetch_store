@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eaeaea;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    .headerLeft {
+      padding: 0;
+    }
+    .headerRight {
+      margin-bottom: 20px;
+    }
+  }
+}
+.headerLeft {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.headerRight {
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      margin-right: 20px;
+    }
+  }
+}
