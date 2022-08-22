@@ -28,6 +28,7 @@ h3 {
 }
 h4 {
   text-align: center;
+  
 }
 
 .wrapper {
@@ -91,7 +92,12 @@ h4 {
 .list__item {
   display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
+  h3 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 0 30px;
+  }
   @media (max-width: 768px) {
     justify-content: center;
   }
